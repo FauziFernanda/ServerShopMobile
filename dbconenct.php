@@ -1,6 +1,7 @@
 <?php
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'interchange.proxy.rlwy.net');
 define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'db_ecommerce');
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+define('DB_PASS', 'ZWCAomhdzcNBxWRIEgGMTPYiSKhngTgj');
+define('DB_NAME', 'railway');
+define('DB_PORT', 58975);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
