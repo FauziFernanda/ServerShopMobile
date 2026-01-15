@@ -53,13 +53,13 @@ try {
     $result = $check->get_result();
 
     if ($result->num_rows > 0) {
-        // Update quantity
+        
         $row = $result->fetch_assoc();
         $newQuantity = $row['quantity'] + $quantity;
         $stat = $conn->prepare("UPDATE cart SET quantity = ? WHERE id = ?");
         $stat->bind_param("ii", $newQuantity, $row['id']);
     } else {
-        // Insert new row
+        
         $stat = $conn->prepare("INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)");
         $stat->bind_param("iii", $user_id, $product_id, $quantity);
     }
